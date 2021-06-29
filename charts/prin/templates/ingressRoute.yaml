@@ -2,7 +2,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: {{ .Chart.Name }}-route-http
-  namespace: {{ .Release.Namespace }}
+  namespace: traefik
 spec:
   entryPoints:
   - web
@@ -24,7 +24,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: {{ .Chart.Name }}-route-https
-  namespace: {{ .Release.Namespace }}
+  namespace: traefik
 spec:
   entryPoints:
   - websecure
