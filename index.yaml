@@ -11,4 +11,14 @@ entries:
     urls:
     - https://github.com/aaronzjc/helm-charts/releases/download/prin-1.1.0/prin-1.1.0.tgz
     version: 1.1.0
-generated: "2021-06-29T15:02:43.045738625Z"
+  - apiVersion: v2
+    appVersion: "1"
+    created: "2021-06-29T15:31:43.949698298Z"
+    description: 方便开发的一些小公举
+    digest: 1ecf778a5ebde1bf6803d3415e61e506ff21625b7850bc36cc2aa7235806cec7
+    name: prin
+    type: application
+    urls:
+    - https://github.com/aaronzjc/helm-charts/releases/download/prin-1.0.0/prin-1.0.0.tgz
+    version: 1.0.0
+generated: "2021-06-29T15:31:43.949718398Z"
