@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: {{ .Chart.Name }}-route-http
+  name: {{ include "prin.name" . }}-route-http
   namespace: traefik
 spec:
   entryPoints:
@@ -15,7 +15,7 @@ spec:
     {{- end }}
     services:
     - kind: Service
-      name: {{ .Chart.Name }}-svc
+      name: {{ include "prin.name" . }}-svc
       namespace: {{ .Release.Namespace }}
       port: 80
 ---
@@ -23,7 +23,7 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: {{ .Chart.Name }}-route-https
+  name: {{ include "prin.name" . }}-route-https
   namespace: traefik
 spec:
   entryPoints:
@@ -34,7 +34,7 @@ spec:
     middlewares:
     - name: compress-mw
     services:
-    - name: {{ .Chart.Name }}-svc
+    - name: {{ include "prin.name" . }}-svc
       namespace: {{ .Release.Namespace }}
       port: 80
   tls:
