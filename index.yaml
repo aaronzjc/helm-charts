@@ -3,6 +3,16 @@ entries:
   prin:
   - apiVersion: v2
     appVersion: "1"
+    created: "2021-06-29T15:02:43.045724325Z"
+    description: 方便开发的一些小公举
+    digest: 731f032f2f64155b533c7cf7ba64a26af0c7291a62ba9a57297b77196277146c
+    name: prin
+    type: application
+    urls:
+    - https://github.com/aaronzjc/helm-charts/releases/download/prin-1.1.0/prin-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: "1"
     created: "2021-06-29T14:56:25.699139159Z"
     description: 方便开发的一些小公举
     digest: 34ac696ae079920fb306327c838cc765fe557c5cd50952aa01f1e42f1016f0a6
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://github.com/aaronzjc/helm-charts/releases/download/prin-1.0.0/prin-1.0.0.tgz
     version: 1.0.0
-generated: "2021-06-29T14:56:25.699169861Z"
+generated: "2021-06-29T15:02:43.045738625Z"
