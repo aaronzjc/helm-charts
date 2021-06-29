@@ -1,5 +1,7 @@
 replicaCount: 2
 
+nameOverride: ""
+
 image:
   repo: "aaronzjc/prin"
   tag: ""

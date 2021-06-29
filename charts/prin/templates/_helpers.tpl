@@ -1,3 +1,7 @@
+{{- define "prin.name" -}}
+{{- default .Chart.Name .Values.nameOverride }}
+{{- end }}
+
 {{- define "prin.labels" -}}
 app: {{ default .Chart.Name }}
 {{- end -}}
