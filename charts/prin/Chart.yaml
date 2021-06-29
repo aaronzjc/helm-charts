@@ -1,0 +1,7 @@
+apiVersion: v2
+name: prin
+description: 方便开发的一些小公举
+type: application
+
+version: 1.0.0
+appVersion: v1.0

@@ -1,0 +1,21 @@
+replicaCount: 2
+
+image:
+  repo: "aaronzjc/prin"
+  tag: ""
+  
+route:
+  host: "prin.memosa.cn"
+  https:
+    enable: true
+    force: true
+    secretName: tls-memosa-cn
+    optionName: tlsoption-memosa-cn
+    
+resources:
+  limits:
+    cpu: 50m
+    memory: 50Mi
+
+timezone:
+  china: true

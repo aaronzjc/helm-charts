@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-svc
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    {{- include "prin.labels" . | nindent 4 }}
+  ports:
+  - port: 80
+    targetPort: 8980

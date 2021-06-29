@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "prin.labels" . | nindent 6 }}
+  replicas: {{ .Values.replicaCount }}
+  revisionHistoryLimit: 1
+  template:
+    metadata:
+      labels:
+        {{- include "prin.labels" . | nindent 8 }}
+    spec:
+      volumes:
+      {{- if .Values.timezone.china }}
+      {{- include "prin.timezone.volume" . | nindent 6 }}
+      {{- end }}
+      - name: prin-log-dir
+        emptyDir: {}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repo }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: Always
+          volumeMounts:
+          - name: prin-log-dir
+            mountPath: /var/log
+          {{- if .Values.timezone.china }}
+          {{- include "prin.timezone.mount" . | nindent 10 }}
+          {{- end }}
+          ports:
+          - containerPort: 8980
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
